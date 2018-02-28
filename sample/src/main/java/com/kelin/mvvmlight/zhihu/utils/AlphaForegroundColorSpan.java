@@ -6,6 +6,7 @@ import android.text.TextPaint;
 import android.text.style.ForegroundColorSpan;
 
 /**
+ * 文本颜色
  * Created by kelin on 16-4-28.
  */
 public class AlphaForegroundColorSpan extends ForegroundColorSpan {

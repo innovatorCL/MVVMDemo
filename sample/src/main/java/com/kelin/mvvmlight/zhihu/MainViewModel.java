@@ -10,12 +10,11 @@ import com.kelin.mvvmlight.messenger.Messenger;
 import com.kelin.mvvmlight.zhihu.news.NewsViewModel;
 import com.kelin.mvvmlight.zhihu.news.TopNewsService;
 
-import java.util.concurrent.TimeUnit;
-
 import me.tatarka.bindingcollectionadapter.ItemView;
 import rx.Observable;
 
 /**
+ * MainActivity 的 VM
  * Created by kelin on 16-4-28.
  */
 public class MainViewModel implements ViewModel {
@@ -27,6 +26,7 @@ public class MainViewModel implements ViewModel {
 
     // viewModel for recycler header viewPager
     public final ItemView topItemView = ItemView.of(com.kelin.mvvmlight.zhihu.BR.viewModel, R.layout.viewpager_item_top_news);
+
     public final ObservableList<TopItemViewModel> topItemViewModel = new ObservableArrayList<>();
 
 

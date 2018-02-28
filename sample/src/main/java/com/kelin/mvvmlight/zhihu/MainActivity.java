@@ -25,14 +25,20 @@ import com.viewpagerindicator.CirclePageIndicator;
 
 public class MainActivity extends RxAppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
     private AlphaForegroundColorSpan alphaForegroundColorSpan;
     private SpannableString actionBarTitleSpan;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         ViewDataBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
-        binding.setVariable(com.kelin.mvvmlight.zhihu.BR.viewModel, new MainViewModel(this));
+        binding.setVariable(BR.viewModel, new MainViewModel(this));
+
+//        ActivityMainBinding b = DataBindingUtil.setContentView(this, R.layout.activity_main);
+//        b.setViewModel(new MainViewModel(this));
+
         CollapsingToolbarLayout collapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);

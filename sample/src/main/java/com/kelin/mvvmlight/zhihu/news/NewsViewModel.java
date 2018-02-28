@@ -42,13 +42,12 @@ public class NewsViewModel implements ViewModel {
     private NewsService.News news;
     private TopNewsService.News topNews;
 
-    /*
-      data for presenter
-     */
-
     // viewModel for RecyclerView
+
+    //RecyclerView 的 数据源，都可以直接绑定在 XML
     public final ObservableList<NewItemViewModel> itemViewModel = new ObservableArrayList<>();
-    // view layout for RecyclerView
+
+    //RecyclerView 的 Item 的布局
     public final ItemViewSelector<NewItemViewModel> itemView = new BaseItemViewSelector<NewItemViewModel>() {
         @Override
         public void select(ItemView itemView, int position, NewItemViewModel itemViewModel) {
@@ -61,6 +60,8 @@ public class NewsViewModel implements ViewModel {
         }
 
     };
+
+
     //collection of view style,wrap to a class to manage conveniently!
     public final ViewStyle viewStyle = new ViewStyle();
 
@@ -79,6 +80,8 @@ public class NewsViewModel implements ViewModel {
                 .map(c -> NewsListHelper.DAY_FORMAT.format(c.getTime()))
                 .subscribe(d -> loadTopNews(d));
     });
+
+
     /**
      * @param p count of listview items,is unused here!
      * @params,funciton when return true，the callback just can be invoked!
